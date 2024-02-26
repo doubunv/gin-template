@@ -20,7 +20,3 @@ func NewUserService() *UserService {
 func (u *UserService) UserList(ctx *gin.Context, req *userProto.UserListReq) (rsp *userProto.UserListResp, err error) {
 	return
 }
-
-func (u *UserService) UserTotal(ctx *gin.Context, req *userProto.UserListReq) (rsp *userProto.UserTotalResp, err error) {
-	return
-}
