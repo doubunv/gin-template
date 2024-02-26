@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${APP-NAME}
+  labels:
+    app: ${APP-NAME}
+spec:
+  replicas: ${REPLICAS}
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: ${APP-NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP-NAME}
+    spec:
+      containers:
+        - name: ${APP-NAME}
+          imagePullPolicy: Always
+          image: ${APP-REGISTRY}
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+            - name: volume-localtime
+              mountPath: /etc/localtime
+      volumes:
+        - name: config-volume
+          configMap:
+            name: ${APP-NAME}
+        - name: volume-localtime
+          hostPath:
+            path: /etc/localtime
+            type: ''
+      nodeSelector:
+        video-process: video-process
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${APP-NAME}
+spec:
+  type: ClusterIP
+  selector:
+    app: ${APP-NAME}
+  ports:
+    - port: 80
+      targetPort: 80

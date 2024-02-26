@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+package template;
+
+option go_package="project-api/api/user/userProto";
+
+service Demo {
+  rpc UserList(UserListReq) returns (UserInfoResp){
+    option(google.api.http) = {
+      post:"/api/user/v1/list",
+      body: "*"
+    };
+  }
+}
+
+message UserInfoResp{
+  int64 id = 1;
+  string name = 2;
+}
+
+message Query {
+  // ID
+  int64 id = 1;
+  // name
+  string name = 2;
+}
+
+message UserListReq{
+  Query query = 1;
+  int64 limit = 2;
+  int64 offset = 3;
+}
+
+message UserListResp{
+  repeated UserInfoResp items = 1;
+}

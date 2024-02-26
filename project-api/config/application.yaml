@@ -1,0 +1,13 @@
+name: project-api
+env: test
+port: 8081
+debugLevel:
+  debug: 1
+  info: 1
+  error: 1
+redis:
+  username:
+  addr: 10.148.0.5:9309
+  password:
+mysql:
+  uri: "gts_user:1fan&ha11f2d_a@tcp(10.148.0.5:3309)/gts_portal?charset=utf8mb4&parseTime=True&loc=Local&multiStatements=true"
