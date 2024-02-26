@@ -1,5 +1,3 @@
-### 此项目为API业务层以及GRPC数据层DEMO，抽离封装了rpc-client、base-common包
-
 ## 全局说明：
 1. 所有函数错误需要显示返回，即需要定义一个返回error
 2. 在自定义协程里面，必须手动加上 recover 
