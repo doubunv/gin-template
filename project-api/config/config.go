@@ -69,8 +69,8 @@ type (
 )
 
 func init() {
-	logInit()
 	configInit()
+	logInit()
 	mysqlInit()
 	redisInit()
 	zapLogInit()
