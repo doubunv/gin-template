@@ -26,8 +26,8 @@ type UserInfoResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Id   int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`    // id describe txt
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"` // id describe txt
 }
 
 func (x *UserInfoResp) Reset() {
@@ -76,15 +76,14 @@ func (x *UserInfoResp) GetName() string {
 	return ""
 }
 
+// test
 type Query struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// ID
-	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	// name
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Id   int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`    // id describe txt
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"` // name describe txt
 }
 
 func (x *Query) Reset() {
@@ -139,8 +138,8 @@ type UserListReq struct {
 	unknownFields protoimpl.UnknownFields
 
 	Query  *Query `protobuf:"bytes,1,opt,name=query,proto3" json:"query,omitempty"`
-	Limit  int64  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
-	Offset int64  `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty"`
+	Limit  int64  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`   // limit describe txt
+	Offset int64  `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty"` // offset describe txt
 }
 
 func (x *UserListReq) Reset() {
@@ -201,7 +200,7 @@ type UserListResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Items []*UserInfoResp `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items []*UserInfoResp `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"` // UserInfoResp describe txt
 }
 
 func (x *UserListResp) Reset() {

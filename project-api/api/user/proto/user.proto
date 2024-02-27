@@ -16,23 +16,22 @@ service Demo {
 }
 
 message UserInfoResp{
-  int64 id = 1;
-  string name = 2;
+  int64 id = 1; // id describe txt
+  string name = 2; // id describe txt
 }
 
+//test
 message Query {
-  // ID
-  int64 id = 1;
-  // name
-  string name = 2;
+  int64 id = 1; // id describe txt
+  string name = 2; // name describe txt
 }
 
 message UserListReq{
   Query query = 1;
-  int64 limit = 2;
-  int64 offset = 3;
+  int64 limit = 2; // limit describe txt
+  int64 offset = 3; // offset describe txt
 }
 
 message UserListResp{
-  repeated UserInfoResp items = 1;
+  repeated UserInfoResp items = 1; // UserInfoResp describe txt
 }
