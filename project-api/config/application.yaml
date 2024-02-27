@@ -7,7 +7,7 @@ debugLevel:
   error: 1
 redis:
   username:
-  addr: 10.148.0.5:9309
+  addr: 10.xx.xx.xx:xx
   password:
 mysql:
-  uri: "gts_user:1fan&ha11f2d_a@tcp(10.148.0.5:3309)/gts_portal?charset=utf8mb4&parseTime=True&loc=Local&multiStatements=true"
+  uri: "username:password@tcp(xx.xx.xx.xx:xx)/db_name?charset=utf8mb4&parseTime=True&loc=Local&multiStatements=true"
